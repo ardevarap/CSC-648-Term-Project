@@ -26,4 +26,4 @@
 
 ## Running the project
 This app is hosted on http://54.219.143.67/ but it can be run locally with a few steps. 
-First clone or download this repository. Then run npm i and npm start on the terminal in both the application/server and application/client directories
+First clone or download this repository. Then run npm i and npm start on the terminal in both the application/server and application/client directories. Then find and replace all the uses of the IP 54.219.143.67 to localhost
