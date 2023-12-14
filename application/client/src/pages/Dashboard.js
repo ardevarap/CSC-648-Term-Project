@@ -31,7 +31,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
         <div className="user-info">
-            <h1>{user.username}'s Dashboard</h1>
+            <h1>Your Dashboard</h1>
         </div>
         <div className="message-container">
             <h2 className="message-header">Your Messages:</h2>
