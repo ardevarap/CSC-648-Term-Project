@@ -1,3 +1,9 @@
+/* 
+  jorge.js
+
+  Team member page for Jorge.
+*/
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import jorgeImage from "../images/jorge.jpg";

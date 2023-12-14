@@ -1,4 +1,9 @@
-// SearchResults.js
+/* 
+    SearchResults.js
+
+    Displays search results for tutors based on user's queries.
+*/
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

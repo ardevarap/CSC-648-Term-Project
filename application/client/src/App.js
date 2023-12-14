@@ -1,3 +1,7 @@
+/* 
+  App.js
+*/
+
 import React, { Component } from "react";
 import "./css/global.css";
 import ReactGA4 from 'react-ga4';

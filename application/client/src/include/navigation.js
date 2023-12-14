@@ -1,3 +1,9 @@
+/* 
+  navigation.js
+
+  Navigation bar component, which encompasses the search bar and links.
+*/
+
 import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import DashboardPopover from './DashboardPopover.js';

@@ -1,3 +1,9 @@
+/* 
+  footer.js
+
+  Footer component found in all pages.
+*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 

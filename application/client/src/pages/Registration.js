@@ -1,3 +1,9 @@
+/* 
+  Registration.js
+
+  Registration page to allow users to sign up for the service.
+*/
+
 import React, { useState } from 'react';
 import { Form, Button, FloatingLabel } from 'react-bootstrap';
 import { useNavigate } from 'react-router';

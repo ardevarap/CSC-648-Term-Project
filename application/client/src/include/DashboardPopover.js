@@ -1,3 +1,9 @@
+/* 
+  DashboardPopover.js
+
+  The 'Open Dashboard' button on the navigation bar.
+*/
+
 import React from 'react';
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

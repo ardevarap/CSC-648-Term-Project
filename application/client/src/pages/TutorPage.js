@@ -1,3 +1,9 @@
+/* 
+  TutorPage.js
+
+  Tutor details page for users wanting more details about a specific tutor.
+*/
+
 import React, { useState, useContext } from 'react';
 import { useLocation } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'; 

@@ -1,3 +1,9 @@
+/* 
+  Dashboard.js
+
+  Dashboard page. Contains recent messages.
+*/
+
 import React, { useState, useEffect } from 'react';
 import '../css/Dashboard.css'; // Adjust the path based on your project structure
 

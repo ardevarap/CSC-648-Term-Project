@@ -1,3 +1,9 @@
+/* 
+  Home.js
+
+  Main home page for our app.
+*/
+
 import React, { useState, useEffect, useContext } from 'react';
 import { Button } from 'react-bootstrap'; // Import Link if you need it, or use a different import if it's from another library
 import { useNavigate } from 'react-router-dom';

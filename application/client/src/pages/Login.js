@@ -1,3 +1,9 @@
+/* 
+  Login.js
+
+  Login page to allow users to sign in to the service.
+*/
+
 import React, { useState, useContext } from 'react'; 
 import { Link } from 'react-router-dom';
 import { Form, Button, FloatingLabel, Modal } from 'react-bootstrap';

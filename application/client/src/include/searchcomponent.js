@@ -1,3 +1,9 @@
+/* 
+    searchComponent.js
+
+    Search bar component. Searches tutors from database and directs users to a search results page.
+*/
+
 import React, { useState } from "react";
 import { Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';

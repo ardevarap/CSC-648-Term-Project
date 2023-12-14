@@ -1,3 +1,9 @@
+/* 
+  About.js
+
+  The about page. Contains description and team members.
+*/
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 

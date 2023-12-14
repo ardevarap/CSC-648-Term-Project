@@ -1,3 +1,9 @@
+/* 
+  akshat.js
+
+  Team member page for Akshat.
+*/
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/team_member.css'; // Import css template for each team member

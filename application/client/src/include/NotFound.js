@@ -1,3 +1,9 @@
+/* 
+  NotFound.js
+
+  Unused. Meant for 404 page when user types in incorrect URL.
+*/
+
 import { Button } from "react-bootstrap";
 
 const NotFound = () => {
