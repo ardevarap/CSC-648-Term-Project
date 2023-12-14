@@ -1,26 +1,33 @@
-import React, { Component, useState } from "react";
+/* 
+  App.js
+*/
+
+import React, { Component } from "react";
 import "./css/global.css";
-//import  { useState } from 'react';
-//import NavigationBar from "./include/navigation";
+import ReactGA4 from 'react-ga4';
+import NavigationBar from './include/navigation.js';
+import Footer from "./include/footer.js";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './AuthContext.js'; 
 
-//import HomePage from "./pages/Home";
-//import AboutPage from "./pages/About";
-//import NotFound from "./include/NotFound";
+import HomePage from "./pages/Home.js";
+import SearchResults from './pages/SearchResults.js';
+import TutorApply from "./pages/tutor_apply.js";
+import TutorPage from "./pages/TutorPage.js";
+import Login from './pages/Login.js'; // If you have a login component
+import Registration from './pages/Registration.js';
+import Dashboard from "./pages/Dashboard.js";
+import AboutPage from './pages/About.js';
+import Akshat from "./pages/akshat.js";
+import Aakanksha from "./pages/aakanksha.js";
+import Andy from "./pages/andy.js";
+import Azi from "./pages/azi.js";
+import Charter from "./pages/charter.js";
+import Jorge from "./pages/jorge.js";
 
-// Bootstrap CSS
+ // Bootstrap CSS and JS
 import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
-
-//React Router
-//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import Akshat from "./pages/akshat";
-//import Aakanksha from "./pages/aakanksha";
-//import Andy from "./pages/andy";
-//import Jorge from "./pages/jorge";
-//import Azi from "./pages/azi";
-//import Charter from "./pages/charter";
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 class App extends Component {
   constructor(props) {
@@ -28,241 +35,41 @@ class App extends Component {
     this.state = { apiResponse: "" };
   }
 
-  // callIndex() {
-  //   fetch("http://localhost:9000/")
-  //     .then(res => res.text())
-  //     .then(res => this.setState({ index: res }))
-  //     .catch(err => err);
-  // }
-
-  // callAPI() {
-  //   fetch("http://localhost:9000/testAPI")
-  //     .then(res => res.text())
-  //     .then(res => this.setState({ apiResponse: res }))
-  //     .catch(err => err);
-  // }
-  
-
-   callHome(){
-     fetch("http://54.219.143.67:5001/topic")
-     .then(res => res.text())
-     .then(res => this.setState({ home: res}))
-     .catch(err=>err);
-   }
-
-  //  callData(){
-  //   fetch("http://localhost:5000/")
-  //    .then(res => res.text())
-  //    .then(res => this.setState({ data: res}))
-  //    .catch(err=>err);
-  //  }
-
-  // // <p className="App-intro">{this.state.home}</p>
-  // //       <p className="App-intro">{this.state.apiResponse}</p>
-  
-   componentWillMount() {
-   //  this.callAPI();
-     this.callHome();
-  //   this.callIndex();
-  // this.callData();
-   }
-
-   
-
   render() {
     return (
-      <div className="App">
+      <AuthProvider> {/* Wrap your app with AuthProvider */}
+      <div className="app-container">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          <h1 className="App-title">This is the test!</h1>
+          <NavigationBar />
         </header>
-          <br></br>
-          <body>
-          <SearchComponent /> {/* Add the SearchComponent here */}
 
-            
-          </body>
-        {/* <input type="search" class="search" placeholder = "e.g. Math 111"></input> */}
-          
-        <p className="App-intro">{this.state.home}</p>
+        <main className="app-main">
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/apply" element={<TutorApply />} />
+            <Route path="/tutor" element={<TutorPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/akshat" element={<Akshat />} />
+            <Route path="/aakanksha" element={<Aakanksha />} />
+            <Route path="/andy" element={<Andy />} />
+            <Route path="/azi" element={<Azi />} />
+            <Route path="/charter" element={<Charter />} />
+            <Route path="/jorge" element={<Jorge />} />
+            <Route path="/search-results" element={<SearchResults />} />
+          </Routes>
+          {/*<p className="App-intro">{this.state.home}</p>*/}
+        </main>
         
+        <footer className="app-footer">
+          <Footer />
+        </footer>
       </div>
+      </AuthProvider>
     );
   }
 }
 
-// function SearchComponent() {
-//   // State to store the selected category
-//   const [selectedCategory, setSelectedCategory] = useState('');
-//   // State to store the search term
-//   const [searchTerm, setSearchTerm] = useState('');
-//   // State to control the visibility of the dropdown
-//   const [showDropdown, setShowDropdown] = useState(false);
-
-//   // Handler for selecting a category
-//   const handleCategorySelect = (category) => {
-//     setSelectedCategory(category);
-//     setShowDropdown(false); // Close the dropdown after selecting a category
-//   };
-
-//   // Handler for updating the search term
-//   const handleSearchTermChange = (e) => {
-//     setSearchTerm(e.target.value);
-//   };
-
-//   // Handler for the search button click
-//   // Handler for the search button click
-// const handleSearch = () => {
-//   console.log('Selected Category:', selectedCategory);
-//   console.log('Search Term:', searchTerm);
-
-//   // Make an API request to your Express server
-//   fetch(`http://localhost:5001/search?category=${selectedCategory}&searchTerm=${searchTerm}`)
-  
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // Handle the response data here
-//       console.log('Search results:', data);
-//     })
-//     .catch((error) => {
-//       console.error('API error:', error);
-//     });
-// };
-
-  
-
-//   // Handler for Enter key press in the search input
-//   const handleKeyPress = (e) => {
-//     if (e.key === 'Enter') {
-//       handleSearch();
-//     }
-//   };
-
-//   // Categories to display in the dropdown
-//   const categories = ['Math', 'CSC', 'Physics'];
-
-//   return (
-//     <div className="SearchComponent">
-//       <h1>Tutor Search</h1>
-//       <button onClick={() => setShowDropdown(!showDropdown)}>Select Category</button>
-//       {showDropdown && (
-//         <div className="dropdown">
-//           {categories.map((category) => (
-//             <button key={category} onClick={() => handleCategorySelect(category)}>
-//               {category}
-//             </button>
-//           ))}
-//         </div>
-//       )}
-//       <input
-//         type="text"
-//         placeholder="Search..."
-//         value={searchTerm}
-//         onChange={handleSearchTermChange}
-//         onKeyPress={handleKeyPress}
-//       />
-//       <button onClick={handleSearch}>Search</button>
-//       <p>Selected Category: {selectedCategory}</p>
-//       <p>Search Term: {searchTerm}</p>
-//     </div>
-//   );
-// }
-function SearchComponent() {
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [results, setResults] = useState([]); // Add state to store search results
-
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    setShowDropdown(false);
-  };
-
-  const handleSearchTermChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearch = () => {
-    fetch(`http://54.219.143.67:5001/search?category=${selectedCategory}&searchTerm=${searchTerm}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setResults(data); // Update the state with search results
-      })
-      .catch((error) => {
-        console.error('API error:', error);
-      });
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
-
-  const categories = ['Math', 'CSC', 'Physics'];
-
-  return (
-    <div className="SearchComponent">
-      <h1>Tutor Search</h1>
-      <button onClick={() => setShowDropdown(!showDropdown)}>Select Category</button>
-      {showDropdown && (
-        <div className="dropdown">
-          {categories.map((category) => (
-            <button key={category} onClick={() => handleCategorySelect(category)}>
-              {category}
-            </button>
-          ))}
-        </div>
-      )}
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleSearchTermChange}
-        onKeyPress={handleKeyPress}
-      />
-      <button onClick={handleSearch}>Search</button>
-      <p>Selected Category: {selectedCategory}</p>
-      <p>Search Term: {searchTerm}</p>
-
-      {/* Display search results */}
-      <div>
-        
-        {results.map((result, index) => (
-          <div key={index}>
-            <h3>Tutor Name: {result.tutorName}</h3>
-            <p>Description: {result.description}</p>
-            <p>Topic Name: {result.topicName}</p>
-            <p>Resume: {result.resume}</p>
-            <img src={result.profilePicture} alt="Profile Picture" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-
-
 export default App;
-
-
-
-// <Router>
-      //   <div className="App">
-      //     <NavigationBar />
-      //     <div className="content">
-      //       <Routes>
-      //         <Route exact path="/" element={<HomePage />} />
-      //         <Route path="/about" element={<AboutPage />} />
-      //         <Route path="*" element={<NotFound />} />
-      //         <Route path="akshat" element={<Akshat />} />
-      //         <Route path="aakanksha" element={<Aakanksha />} />
-      //         <Route path="andy" element={<Andy />} />
-      //         <Route path="jorge" element={<Jorge />} />
-      //         <Route path="azi" element={<Azi />} />
-      //         <Route path="charter" element={<Charter />} />
-      //       </Routes>
-      //     </div>
-      //   </div>
-      // </Router>
