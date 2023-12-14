@@ -175,6 +175,8 @@
   }
 
   .recentTutorCard {
+    display:flex;
+    flex-wrap: wrap;
     width: 100%;
     margin: 0 auto 20px;
     box-sizing: border-box;
