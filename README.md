@@ -23,3 +23,7 @@
 | Jorge Pérez           | jperezmora@sfsu.edu   | Carcris23       |
 
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
+
+## Running the project
+This app is hosted on http://54.219.143.67/ but it can be run locally with a few steps. 
+First clone or download this repository. Then run npm i and npm start on the terminal in both the application/server and application/client directories
